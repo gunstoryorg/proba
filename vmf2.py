@@ -63,16 +63,14 @@ def drawwindow():
             "-                                         -",
             "-------------------------------------------"]
     win.fill((0, 255, 255))
-    a = b = 0  # координаты
-    for row in level:  # вся строка
-        for col in row:  # каждый символ
+    a = b = 0  
+    for row in level:  
+        for col in row: 
             if col == "-":
-                # создаем блок, заливаем его цветом и рисеум его
                 pf = block
-                # pf.fill(Color(PLATFORM_COLOR))
                 win.blit(pf, (a, b))
-            a += BLOCK_WIDTH  # блоки платформы ставятся на ширине блоков
-        b += BLOCK_HEIGHT  # то же самое и с высотой
+            a += BLOCK_WIDTH  
+        b += BLOCK_HEIGHT  
         a = 0
     if animCount+1>=60:
         animCount=0
