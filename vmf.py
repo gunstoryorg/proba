@@ -44,16 +44,16 @@ level = [
 run = True
 while run:
         win.fill((255, 255, 255))
-        x = y = 0  # координаты
-        for row in level:  # вся строка
-            for col in row:  # каждый символ
+        x = y = 0  
+        for row in level:  
+            for col in row:  
                 if col == "-":
-                    # создаем блок, заливаем его цветом и рисеум его
+                    
                     pf = block
-                    # pf.fill(Color(PLATFORM_COLOR))
+                    
                     win.blit(pf, (x, y))
-                x += BLOCK_WIDTH  # блоки платформы ставятся на ширине блоков
-            y += BLOCK_HEIGHT  # то же самое и с высотой
+                x += BLOCK_WIDTH 
+            y += BLOCK_HEIGHT 
             x = 0
         pygame.time.delay(10)
 
@@ -70,8 +70,6 @@ while run:
             b-=speed
         if keys[pygame.K_s] and b<768-height-5:
             b+=speed
-        #win.fill((0,0,0))
-        #pygame.draw.rect(win,(0,215,0), (a,b,width,height))
         win.blit(Hero, (a, b))
         pygame.display.update()
 
